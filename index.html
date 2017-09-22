@@ -30,14 +30,13 @@
             </div>
 
             <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="col-sm-offset-2 col-sm-10">
                     <br>
                     <h1 class="my-title">Willy J.</h1>
                     <p class="my-body"> Delivering Technology</p>
                     <br>
                     
-                    <div class="col-sm-offset-2 col-sm-10">
-
-                    <marquee behavior="scroll" direction="up" scrollamount="3" ><center><font color="white" size="+1">"Ask and it will be given to you; seek and you will find; 
+                   <marquee behavior="scroll" direction="up" scrollamount="3" ><center><font color="white" size="+1">"Ask and it will be given to you; seek and you will find; 
                         knock and the door will be opened to you."---Matthew 7:7
                         <br><br>
                         </marquee>
@@ -53,106 +52,59 @@
                     <hr class="my-hr">
                     
                     <h1 class="my-paragraph">Contact me</h1>
-                   </div>
+                   
+                   
                             <form action="https://script.google.com/macros/s/AKfycbxKlO_1DIAHG4hBvvqm2BXI4pPfa5dXctGIRIYGD0rMKlQ7DTw/exec" method="POST">
                                    
                                 <fieldset>
                                        
                                 <div class="form-group">
                                         <label class=" control-label mb-2 mr-sm-2 mb-sm-0 sr-only" for="name-id">Name</label>
-                                        <div class="col-sm-offset-2 col-sm-10">
+                                     
                                         <input type="text" name="NAME" id="name-id" class="form-control" placeholder="Enter Name">
-                                        </div>
-                                    </div>
+                                        
+                                </div>
                                 
                                     <div class="form-group">
                                         <label class=" control-label mb-2 mr-sm-2 mb-sm-0 sr-only" for="email-id">Email</label>
-                                        <div class="col-sm-offset-2 col-sm-10">
+                                       
                                         <input type="email" name="EMAIL" id="email-id" class="form-control" placeholder="Enter Email">
-                                        </div>
                                     </div>
+                                  
                                 
 
                                     <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                       
-                                       
+                                        <!-- <input type="submit" value="Submit" class="btn btn-default form-control" id="submit-id" /> -->
                                         <button type="submit" class="btn btn-default form-control" id="submit-id">submit</button>                   
-                                        <div class="alert alert-danger alert-dismissible fade in" hidden id="alert-id">
+                                        
+                                        <div class="alert alert-danger alert-dismissible" hidden id="alert-id">
                                             <button type="button" class="close" id="close-id"><span>&times;</span></button>
                                             Thank you! We'll get in touch.
         
                                         </div>
                                     </div>
-                                    </div>
+                                    
 
                                 </fieldset>
                                             
-                                </form>
+                            </form>
                    
 
-             <div>
-       
-
-
+                    <div>
+            </div>
         </div>
 
-
-
-
-
-
-
     </div>
-
-<script>
-
-$(function () {
-
-    // on submitting the form
-    $('form').submit(function (event) {
-        // prevent the default action of reloading the page
-        event.preventDefault();
-
-        var sendData = {};
-        $(event.target.nodeName + ' :input').each(function(){
-            sendData[this.name] = $(this).val();
-        });
-
-        var posting = $.ajax({
-            type: 'POST',
-            url: $(event.target.nodeName).prop('action'),
-            data: sendData
-        });
-
-        posting.done(function (response) {
-            console.log(response);
-            $('#alert-id').prop('hidden', false);
-            $('form :input').each(function(){
-                $(this).val('');
-            })
-        });
-        posting.fail(function (response) {
-            console.log(response);
-        });
-    });
-
-
-    $('#close-id').click(function(){
-     // hide the alert panel by adding the hidden property
-     $('#alert-id').prop('hidden', true);
-    });
-
-
-
-
-
-</script>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
 
-/*    <script src="index.js"></script>*/
-    
+<script src="index.js"></script>
+
+<script>
+
+</script>
+        
+
 </body>
 </html>
